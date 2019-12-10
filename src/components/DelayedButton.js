@@ -13,10 +13,15 @@ export default class DelayedButton extends Component {
     }
   }
 
-  render() {
-    return (
-      <button></button>
-    )
+  delayedClick = (event) => {
+    event.persist()
+    setTimeout(() => this.props.onDelayedClick(event), this.props.delay)
   }
 
+  render() {
+    return (
+      <button onClick={(event) => this.delayedClick(event)}>
+      </button>
+    )
+  }
 }

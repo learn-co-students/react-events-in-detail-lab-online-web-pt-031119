@@ -13,12 +13,13 @@ export default class CoordinatesButton extends Component {
   }
 
   createCoordinates = (event) => {
-    return [event.clientX, event.clientY]
+    this.props.onReceiveCoordinates([event.clientX, event.clientY])
   }
 
   render() {
     return (
       <button onClick={this.createCoordinates} >
+        Coords
       </button>
     )
   }
